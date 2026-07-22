@@ -55,6 +55,17 @@ print("configured; findings stream to project:", PROJECT)
 # The prod platform - where findings, traces, and credits live.
 PLATFORM_URL = "https://app.dreadnode.io"
 
+# The AI Red Teaming Learning Guide - the concept + defense behind each notebook.
+DOCS = "https://docs.dreadnode.io/ai-red-teaming/learning-guide"
+
+
+def docs_note(slug: str, title: str) -> str:
+    """A one-line pointer to the matching docs learning-guide page."""
+    return (
+        f"> **Follow along in the docs:** [{title}]({DOCS}/{slug}) covers the concept, "
+        f"the threat model, and the defenses in depth."
+    )
+
 # Prerequisites banner placed under each notebook's title. Attack notebooks live in
 # traditional-ml/ and generative-ai/, so the setup guide is one level up.
 PREREQ_BANNER = '''
@@ -163,6 +174,10 @@ cells_prereq = [
 Run this once before the attack notebooks. It gets you a working Dreadnode CLI, an
 account, a workspace, and explains how credits are spent. Every other notebook
 assumes these four steps are done.
+
+New to AI red teaming? Read the
+**[AI Red Teaming Learning Guide](https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview)**
+alongside these notebooks - each notebook links to its matching guide page.
 '''),
     md('''
 ## 1. Install the CLI
@@ -273,6 +288,7 @@ Dreadnode environments**, one per modality, so you deploy nothing:
 | `ml-extraction-imdb-text`     | text     | `pwws_evasion`       |
 '''),
     md(PREREQ_BANNER),
+    md(docs_note("evasion", "Evasion - the Learning Guide")),
     md('''
 ## Setup
 
@@ -430,6 +446,9 @@ Both run against the published **`ml-extraction-fraud-tabular`** environment, so
 there is nothing to deploy.
 '''),
     md(PREREQ_BANNER),
+    md(f'> **Follow along in the docs:** [Extraction]({DOCS}/extraction) and '
+       f'[Membership Inference]({DOCS}/membership-inference) cover the concepts, '
+       f'threat models, and defenses in depth.'),
     md("## Setup"),
     code('''
 PROJECT = "airt-learning-02-extraction-membership"
@@ -648,6 +667,7 @@ control fails. The same prompts often breach the **Confidentiality** boundary to
 - Graph of Attacks (GOAT) - [arXiv:2504.19019](https://arxiv.org/abs/2504.19019)
 '''),
     md(PREREQ_BANNER),
+    md(docs_note("text-models", "Attacking Text Models - the Learning Guide")),
     md('''
 ## Setup
 
@@ -777,6 +797,7 @@ channel - [Qi et al., "Visual Adversarial Examples Jailbreak Aligned Large
 Language Models", 2023](https://arxiv.org/abs/2306.13213).
 '''),
     md(PREREQ_BANNER),
+    md(docs_note("multimodal", "Attacking Multimodal Systems - the Learning Guide")),
     md("## Setup"),
     code('''
 PROJECT = "airt-learning-05-multimodal"
@@ -920,6 +941,7 @@ Systems), our reasoning-guided attack -
 [ICML AI-WILD 2026](https://openreview.net/pdf?id=11ZMPJOnzv).
 '''),
     md(PREREQ_BANNER),
+    md(docs_note("multi-agent", "Attacking Multi-Agent Systems - the Learning Guide")),
     md("## Setup"),
     code('''
 PROJECT = "airt-learning-06-multiagent-atlas"
@@ -1109,6 +1131,7 @@ Swap `confidence_inversion` for `nes_inversion` to run the gradient-free NES
 variant with the same interface.
 '''),
     md(PREREQ_BANNER),
+    md(docs_note("model-inversion", "Model Inversion - the Learning Guide")),
     md("## Setup"),
     code('''
 PROJECT = "airt-learning-03-inversion"

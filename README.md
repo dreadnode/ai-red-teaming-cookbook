@@ -8,7 +8,9 @@ need no provider API keys - just a Dreadnode account.
 
 Each attack is framed by what it costs you as a defender (**Confidentiality,
 Integrity, Availability**), shows the result in the platform, and ends with homework
-and the equivalent TUI / CLI command.
+and the equivalent TUI / CLI command. Every notebook links to its matching page in
+the **[AI Red Teaming Learning Guide](https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview)**
+so you can read the concept and defenses alongside the code.
 
 ## Quickstart
 
@@ -53,6 +55,8 @@ Watch your balance in the platform UI.
 ## Links
 
 - Platform: <https://app.dreadnode.io>
+- Learning Guide: <https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview>
+- Docs: <https://docs.dreadnode.io>
 - Install script: <https://dreadnode.io/install.sh>
 
 ## Contributing
