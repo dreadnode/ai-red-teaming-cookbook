@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Keep the pinned GitHub Actions SHAs current (security patches + new versions).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci

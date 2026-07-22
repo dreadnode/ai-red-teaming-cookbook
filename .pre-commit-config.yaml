@@ -1,0 +1,24 @@
+# Optional but recommended: `pip install pre-commit && pre-commit install`
+# Mirrors the CI checks so problems are caught before they are pushed.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.ipynb$'
+      - id: end-of-file-fixer
+        exclude: '\.ipynb$'
+      - id: check-yaml
+      - id: check-added-large-files
+
+  # Strip notebook execution outputs so committed notebooks stay output-free.
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+
+  # Secret scanning (same tool as CI).
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
