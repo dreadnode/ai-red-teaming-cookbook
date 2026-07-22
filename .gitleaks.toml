@@ -1,0 +1,18 @@
+# gitleaks config for the cookbook (mirrors the CI secret-scan step).
+# Extends the default ruleset; the allowlist below only suppresses known
+# false positives - it never disables detection of real credentials.
+[extend]
+useDefault = true
+
+[allowlist]
+  description = "Cookbook false-positive allowlist"
+  # Lock files and the git metadata dir carry no secrets of ours.
+  paths = [
+    '''\.lock$''',
+    '''(^|/)\.git/''',
+  ]
+  # The notebooks embed illustrative encoded payloads (base64 / hex / leetspeak
+  # of benign attack prompts) that are not credentials.
+  regexes = [
+    '''example|placeholder|dummy|sample''',
+  ]
