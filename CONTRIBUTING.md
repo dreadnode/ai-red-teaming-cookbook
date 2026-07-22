@@ -9,8 +9,9 @@ Thanks for helping improve the Dreadnode AI Red Teaming Cookbook.
   banner, a link to the matching Learning Guide page, a "Read the findings" link to
   the platform, a "Homework" section, and a TUI / CLI footer.
 - ASCII only - no em dashes or smart quotes.
-- **Commit notebooks with no execution outputs** so diffs stay readable
-  (`jupyter nbconvert --clear-output --inplace <notebook>` before committing).
+- **Keep the execution outputs** so readers can see the results and charts
+  without running anything. Just make sure a notebook runs cleanly end to end
+  before committing its outputs.
 
 ## Before opening a PR
 
@@ -26,7 +27,6 @@ for f in sorted(glob.glob("**/*.ipynb", recursive=True)):
     for i, c in enumerate(nb.cells):
         if c.cell_type != "code":
             continue
-        assert not c.get("outputs") and c.get("execution_count") is None, f"{f} cell {i} has output"
         src = c.source
         try:
             ast.parse(src)

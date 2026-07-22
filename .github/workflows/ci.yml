@@ -38,7 +38,7 @@ jobs:
           python-version: "3.12"
       - name: Install nbformat
         run: pip install nbformat
-      - name: Validate schema, syntax, and clean outputs
+      - name: Validate schema and cell syntax
         run: |
           python - <<'PY'
           import ast
@@ -47,6 +47,9 @@ jobs:
 
           import nbformat
 
+          # Notebooks keep their execution outputs on purpose so readers can see
+          # the results/charts without running anything. We only check that each
+          # notebook is well-formed and that code cells parse.
           failed = False
           for path in sorted(glob.glob("**/*.ipynb", recursive=True)):
               nb = nbformat.read(path, as_version=4)
@@ -54,10 +57,6 @@ jobs:
               for i, cell in enumerate(nb.cells):
                   if cell.cell_type != "code":
                       continue
-                  # Committed notebooks must be output-free so diffs stay readable.
-                  if cell.get("outputs") or cell.get("execution_count") is not None:
-                      print(f"::error file={path}::cell {i} has committed output/execution_count - clear it")
-                      failed = True
                   src = cell.source
                   try:
                       ast.parse(src)

@@ -61,8 +61,8 @@ Watch your balance in the platform UI.
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Keep committed notebooks output-free and
-run the validation check before opening a PR.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Notebooks keep their execution outputs so
+readers can see the results; run the validation check before opening a PR.
 
 ## License
 
