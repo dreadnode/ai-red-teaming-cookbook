@@ -61,9 +61,8 @@ Watch your balance in the platform UI.
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). The notebooks are generated from
-[`tools/build_notebooks.py`](tools/build_notebooks.py) - edit the generator and
-regenerate rather than hand-editing the `.ipynb` files.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Keep committed notebooks output-free and
+run the validation check before opening a PR.
 
 ## License
 

@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: CI only needs to read the repo.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secret-scan:
+    name: Secret scanning (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0 # full history so the scan covers every commit
+      - name: Install gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.0/gitleaks_8.30.0_linux_x64.tar.gz | tar -xz
+          sudo mv gitleaks /usr/local/bin/
+      - name: Scan for committed secrets
+        run: gitleaks detect --source . --redact --no-banner --verbose
+
+  notebooks:
+    name: Validate notebooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Install nbformat
+        run: pip install nbformat
+      - name: Validate schema, syntax, and clean outputs
+        run: |
+          python - <<'PY'
+          import ast
+          import glob
+          import sys
+
+          import nbformat
+
+          failed = False
+          for path in sorted(glob.glob("**/*.ipynb", recursive=True)):
+              nb = nbformat.read(path, as_version=4)
+              nbformat.validate(nb)
+              for i, cell in enumerate(nb.cells):
+                  if cell.cell_type != "code":
+                      continue
+                  # Committed notebooks must be output-free so diffs stay readable.
+                  if cell.get("outputs") or cell.get("execution_count") is not None:
+                      print(f"::error file={path}::cell {i} has committed output/execution_count - clear it")
+                      failed = True
+                  src = cell.source
+                  try:
+                      ast.parse(src)
+                  except SyntaxError:
+                      # Notebooks use top-level await; wrap to compile-check.
+                      try:
+                          ast.parse("async def _cell():\n" + "\n".join("    " + line for line in src.splitlines()))
+                      except SyntaxError as exc:
+                          print(f"::error file={path}::cell {i}: {exc}")
+                          failed = True
+              print(f"ok {path}")
+          sys.exit(1 if failed else 0)
+          PY
