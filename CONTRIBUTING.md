@@ -19,19 +19,8 @@ CI runs two checks on every PR - **gitleaks** secret scanning and notebook
 validation. Run the validation locally first:
 
 ```bash
-python - <<'PY'
-import ast, glob
-import nbformat
-for f in sorted(glob.glob("**/*.ipynb", recursive=True)):
-    nb = nbformat.read(f, as_version=4); nbformat.validate(nb)
-    for i, c in enumerate(nb.cells):
-        if c.cell_type != "code":
-            continue
-        src = c.source
-        try:
-            ast.parse(src)
-        except SyntaxError:
-            ast.parse("async def _c():\n" + "\n".join("    " + l for l in src.splitlines()))
-    print("ok", f)
-PY
+python scripts/check_notebooks.py
 ```
+
+It validates every notebook's nbformat schema and the Python syntax of each code
+cell (allowing top-level `await`), exiting non-zero on the first problem.
