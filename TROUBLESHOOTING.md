@@ -17,7 +17,7 @@ Use a 3.11+ interpreter. The quickest way is [uv](https://docs.astral.sh/uv/):
 uv python install 3.12
 uv venv --python 3.12
 source .venv/bin/activate
-uv pip install "dreadnode>=2.0.37" jupyter
+uv pip install "dreadnode>=2.0.38" jupyter
 ```
 
 Verify:
