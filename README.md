@@ -34,7 +34,7 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 
 ## Notebooks
 
-### [`traditional-ml/`](traditional-ml) - attacks on classifiers via the `/predict` API
+### [`traditional-ml/`](traditional-ml) - attacks on classifiers via the `/predict` API (needs `pip install "dreadnode[airt-ml]"` for the sklearn/torch surrogates)
 
 | Notebook | Attack family | What it shows |
 |----------|---------------|---------------|
