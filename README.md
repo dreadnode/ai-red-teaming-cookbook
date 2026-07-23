@@ -27,6 +27,8 @@ creating an account, a workspace, and how credits are spent - and work through t
 tracks below. Prefer the terminal? Run `dreadnode` (no arguments) for the
 interactive TUI; every notebook ends with the exact TUI / headless-CLI equivalent.
 
+To run a notebook, open it in **Jupyter** (`jupyter lab`) or **VS Code** and select the kernel for the environment where you installed `dreadnode`. Bring-your-own provider keys (`GROQ_API_KEY`, `OPENROUTER_API_KEY`, ...) are read from your shell or a `.env` file. See [`00_prerequisites.ipynb`](00_prerequisites.ipynb) for details.
+
 Hitting a snag? See **[`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)** for the common
 setup and run issues (Python version, auth, org slug, environments, credits).
 
