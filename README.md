@@ -27,6 +27,9 @@ creating an account, a workspace, and how credits are spent - and work through t
 tracks below. Prefer the terminal? Run `dreadnode` (no arguments) for the
 interactive TUI; every notebook ends with the exact TUI / headless-CLI equivalent.
 
+Hitting a snag? See **[`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)** for the common
+setup and run issues (Python version, auth, org slug, environments, credits).
+
 ## Notebooks
 
 ### [`traditional-ml/`](traditional-ml) - attacks on classifiers via the `/predict` API
@@ -58,6 +61,7 @@ Watch your balance in the platform UI.
 - Learning Guide: <https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview>
 - Docs: <https://docs.dreadnode.io>
 - Install script: <https://dreadnode.io/install.sh>
+- Troubleshooting: [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)
 
 ## Contributing
 
