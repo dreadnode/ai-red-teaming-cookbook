@@ -48,8 +48,13 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 |----------|---------------|---------------|
 | [`04_generative_text`](generative-ai/04_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
 | [`05_multimodal`](generative-ai/05_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
-| [`06_multiagent_atlas`](generative-ai/06_multiagent_atlas.ipynb) | Multi-agent | Propagate an injection through an agent mesh until a privileged tool fires (**ATLAS**) |
-| [`07_agentic_security`](generative-ai/07_agentic_security.ipynb) | Agentic security | Probe a deployed agent for **RCE & data exfil** two ways: the full **injection** suite (OWASP-ASI) and **honeytoken** canaries (inert, self-cleaning) |
+
+### [`agentic-red-teaming/`](agentic-red-teaming) - attacks on AI agents and multi-agent systems
+
+| Notebook | Focus | What it shows |
+|----------|-------|---------------|
+| [`01_multiagent_atlas`](agentic-red-teaming/01_multiagent_atlas.ipynb) | Multi-agent (ATLAS) | Propagate an injection through an agent mesh until a privileged tool fires |
+| [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | Injection + honeytoken | Probe a deployed agent for **RCE and data exfiltration** with the OWASP-ASI suite and inert honeytoken canaries |
 
 ## Credits
 
