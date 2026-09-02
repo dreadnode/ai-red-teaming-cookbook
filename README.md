@@ -64,17 +64,13 @@ agentic-red-teaming/     attacks on AI agents & multi-agent systems
 
 | Notebook | Focus | What it shows |
 |----------|-------|---------------|
-| [`01_multiagent_atlas`](agentic-red-teaming/01_multiagent_atlas.ipynb) | Multi-agent (ATLAS) | Propagate an injection through an agent mesh until a privileged tool fires |
-| [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | Injection + honeytoken | Probe a deployed agent for **RCE and data exfiltration** with the OWASP-ASI suite and inert honeytoken canaries |
-| [`03_exfiltration_channels`](agentic-red-teaming/03_exfiltration_channels.ipynb) | Data exfiltration channels | Sweep a deployed agent for **markdown-image, link-unfurl, unicode, DNS, SSRF, API, and web-search-query** exfil channels; prove leaks with an inert honeytoken (EchoLeak / ForcedLeak / arXiv:2510.09093) |
-| [`04_indirect_injection_web`](agentic-red-teaming/04_indirect_injection_web.ipynb) | Indirect prompt injection | Provision a real **public webpage** with hidden instructions, point your agent at the URL, and prove it acted on hidden content (EchoLeak / ForcedLeak class) |
-| [`05_ci_secret_exfiltration`](agentic-red-teaming/05_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Provision a CI-assistant agent and prove a hidden instruction leaks its deploy secret to an external webhook (GitLost); plus web-search-query + trusted-domain exfil channels and browser-attack scorers |
-| [`07_context_injection`](agentic-red-teaming/07_context_injection.ipynb) | Indirect prompt injection (ASI01) | A hidden instruction in fetched content drives the agent into a data-exfil tool call |
-| [`08_access_control_idor`](agentic-red-teaming/08_access_control_idor.ipynb) | Broken access control (IDOR) | Retrieve another tenant's record by acting as a cross-tenant identity |
+| [`01_multiagent_atlas`](agentic-red-teaming/01_multiagent_atlas.ipynb) | Multi-agent (ATLAS) | Propagate an injection through an agent mesh until a privileged tool fires (confused deputy) |
+| [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | RCE + data exfiltration | Probe a **real deployed agent** for command execution and exfil across its egress tools, honeytoken-proven |
+| [`04_indirect_injection_web`](agentic-red-teaming/04_indirect_injection_web.ipynb) | Indirect prompt injection | Point a deployed agent at a page with hidden instructions and prove whether it acts on fetched content |
+| [`05_ci_secret_exfiltration`](agentic-red-teaming/05_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Prove a CI-assistant agent leaks its deploy secret to an external webhook (GitLost) |
+| [`07_context_injection`](agentic-red-teaming/07_context_injection.ipynb) | Indirect injection (ASI01) | A hidden instruction in fetched content drives a data-exfil tool call |
 | [`09_memory_poisoning`](agentic-red-teaming/09_memory_poisoning.ipynb) | Memory poisoning (ASI06) | Poison persistent memory so a later benign turn acts on the planted policy |
 | [`10_mcp_poisoning`](agentic-red-teaming/10_mcp_poisoning.ipynb) | MCP tool poisoning | A poisoned tool description makes the agent read a secret file |
-| [`11_agentic_rce`](agentic-red-teaming/11_agentic_rce.ipynb) | Agentic RCE | Reasoning hijack into a privileged code/shell execution |
-| [`12_data_exfiltration`](agentic-red-teaming/12_data_exfiltration.ipynb) | Data exfiltration | A delegate chain leaks a customer record to an external sink |
 | [`13_reasoning_hijack`](agentic-red-teaming/13_reasoning_hijack.ipynb) | Reasoning hijack | A CoT backdoor converts the agent's reasoning into a harmful action |
 | [`14_supply_chain`](agentic-red-teaming/14_supply_chain.ipynb) | Agentic supply chain (ASI04) | The agent resolves and runs a typosquatted look-alike package |
 
