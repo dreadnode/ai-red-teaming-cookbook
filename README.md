@@ -7,10 +7,12 @@ self-contained: it provisions a **hosted target environment** and runs on
 need no provider API keys - just a Dreadnode account.
 
 Each attack is framed by what it costs you as a defender (**Confidentiality,
-Integrity, Availability**), shows the result in the platform, and ends with homework
-and the equivalent TUI / CLI command. Every notebook links to its matching page in
-the **[AI Red Teaming Learning Guide](https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview)**
+Integrity, Availability**), shows the result in the platform, and links to its
+matching page in the **[AI Red Teaming Learning Guide](https://docs.dreadnode.io/ai-red-teaming/learning-guide/overview)**
 so you can read the concept and defenses alongside the code.
+
+Works for both self-serve and **enterprise** users - the same notebooks run against
+your own org and workspace (and, optionally, your own models).
 
 ## Quickstart
 
@@ -22,17 +24,24 @@ curl -fsSL https://dreadnode.io/install.sh | bash
 dn login
 ```
 
-Then open **[`00_prerequisites.ipynb`](00_prerequisites.ipynb)** - it walks through
-creating an account, a workspace, and how credits are spent - and work through the
-tracks below. Prefer the terminal? Run `dreadnode` (no arguments) for the
-interactive TUI; every notebook ends with the exact TUI / headless-CLI equivalent.
+Then open **[`00_prerequisites.ipynb`](00_prerequisites.ipynb)** - it covers install,
+sign-in, and how credits are spent - and work through the tracks below. Prefer the
+terminal? Run `dreadnode --capability ai-red-teaming` for the interactive TUI; every
+notebook ends with the exact TUI steps.
 
-To run a notebook, open it in **Jupyter** (`jupyter lab`) or **VS Code** and select the kernel for the environment where you installed `dreadnode`. Bring-your-own provider keys (`GROQ_API_KEY`, `OPENROUTER_API_KEY`, ...) are read from your shell or a `.env` file. See [`00_prerequisites.ipynb`](00_prerequisites.ipynb) for details.
+To run a notebook, open it in **Jupyter** (`jupyter lab`) or **VS Code** and select the kernel for the environment where you installed `dreadnode`. If you'd like to use your own provider keys (`GROQ_API_KEY`, `OPENROUTER_API_KEY`, ...) they're read from your shell or a `.env` file - otherwise everything runs on managed `dn/` models. See [`00_prerequisites.ipynb`](00_prerequisites.ipynb) for details.
 
 Hitting a snag? See **[`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)** for the common
 setup and run issues (Python version, auth, org slug, environments, credits).
 
 ## Notebooks
+
+```text
+00_prerequisites.ipynb   install, sign-in, credits
+traditional-ml/          classic black-box ML attacks (evasion, extraction, inversion)
+model-red-teaming/       jailbreaks & multimodal/multilingual attacks on foundation models
+agentic-red-teaming/     attacks on AI agents & multi-agent systems
+```
 
 ### [`traditional-ml/`](traditional-ml) - attacks on classifiers via the `/predict` API (needs `pip install "dreadnode[airt-ml]"` for the sklearn/torch surrogates)
 
@@ -46,7 +55,7 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 
 | Notebook | Attack family | What it shows |
 |----------|---------------|---------------|
-| [`01_generative_text`](model-red-teaming/01_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
+| [`01_generative_text`](model-red-teaming/01_generative_text.ipynb) | Jailbreaks | Run **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
 | [`02_multimodal`](model-red-teaming/02_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
 | [`03_multilingual`](model-red-teaming/03_multilingual.ipynb) | Multilingual jailbreaks | Re-express a harmful request in **low-resource languages / transliteration / code-switching** and measure the guardrail gap |
 | [`04_attack_strategies`](model-red-teaming/04_attack_strategies.ipynb) | Strategy comparison | Run **TAP / PAIR / DeepInception / Crescendo** + past-tense / persuasion / cipher / ASCII-art against one target and compare scores |
@@ -88,7 +97,3 @@ Watch your balance in the platform UI.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). Notebooks keep their execution outputs so
 readers can see the results; run the validation check before opening a PR.
-
-## License
-
-[MIT](LICENSE).
