@@ -12,8 +12,10 @@ black-box ML models (evasion, extraction, inversion), see
 
 | Notebook | Attack family | What it shows |
 | --- | --- | --- |
-| [`04_generative_text`](04_generative_text.ipynb) | Jailbreaks | Compare TAP, Crescendo, and GOAT search strategies with prompt transforms |
-| [`05_multimodal`](05_multimodal.ipynb) | Multimodal | Hide an instruction in an image to bypass text-only guardrails |
+| [`01_generative_text`](01_generative_text.ipynb) | Jailbreaks | Compare TAP, Crescendo, and GOAT search strategies with prompt transforms |
+| [`02_multimodal`](02_multimodal.ipynb) | Multimodal | Hide an instruction in an image to bypass text-only guardrails |
+| [`03_multilingual`](03_multilingual.ipynb) | Multilingual jailbreaks | Re-express a harmful request in low-resource languages / transliteration / code-switching and measure the guardrail gap |
+| [`04_attack_strategies`](04_attack_strategies.ipynb) | Strategy comparison | Run TAP / PAIR / DeepInception / Crescendo and past-tense / persuasion / cipher / ASCII-art against one target and compare scores |
 
 ## Prerequisites
 
