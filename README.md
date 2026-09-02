@@ -55,6 +55,7 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 |----------|-------|---------------|
 | [`01_multiagent_atlas`](agentic-red-teaming/01_multiagent_atlas.ipynb) | Multi-agent (ATLAS) | Propagate an injection through an agent mesh until a privileged tool fires |
 | [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | Injection + honeytoken | Probe a deployed agent for **RCE and data exfiltration** with the OWASP-ASI suite and inert honeytoken canaries |
+| [`03_exfiltration_channels`](agentic-red-teaming/03_exfiltration_channels.ipynb) | Data exfiltration channels | Sweep a deployed agent for **markdown-image, link-unfurl, unicode, DNS, SSRF, API, and web-search-query** exfil channels; prove leaks with an inert honeytoken (EchoLeak / ForcedLeak / arXiv:2510.09093) |
 | [`04_indirect_injection_web`](agentic-red-teaming/04_indirect_injection_web.ipynb) | Indirect prompt injection | Provision a real **public webpage** with hidden instructions, point your agent at the URL, and prove it acted on hidden content (EchoLeak / ForcedLeak class) |
 
 ## Credits
