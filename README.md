@@ -46,8 +46,10 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 
 | Notebook | Attack family | What it shows |
 |----------|---------------|---------------|
-| [`04_generative_text`](model-red-teaming/04_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
-| [`05_multimodal`](model-red-teaming/05_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
+| [`01_generative_text`](model-red-teaming/01_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
+| [`02_multimodal`](model-red-teaming/02_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
+| [`03_multilingual`](model-red-teaming/03_multilingual.ipynb) | Multilingual jailbreaks | Re-express a harmful request in **low-resource languages / transliteration / code-switching** and measure the guardrail gap |
+| [`04_attack_strategies`](model-red-teaming/04_attack_strategies.ipynb) | Strategy comparison | Run **TAP / PAIR / DeepInception / Crescendo** + past-tense / persuasion / cipher / ASCII-art against one target and compare scores |
 
 ### [`agentic-red-teaming/`](agentic-red-teaming) - attacks on AI agents and multi-agent systems
 
