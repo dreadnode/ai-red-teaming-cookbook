@@ -42,12 +42,12 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 | [`02_extraction_membership`](traditional-ml/02_extraction_membership.ipynb) | Extraction + Membership inference | Steal a high-fidelity surrogate; decide whether a record was in the training set |
 | [`03_model_inversion`](traditional-ml/03_model_inversion.ipynb) | Model inversion | Reconstruct a representative training example per class (MI-Face) |
 
-### [`generative-ai/`](generative-ai) - attacks on LLMs, vision models, and agent meshes
+### [`model-red-teaming/`](model-red-teaming) - jailbreaks and multimodal attacks on foundation models
 
 | Notebook | Attack family | What it shows |
 |----------|---------------|---------------|
-| [`04_generative_text`](generative-ai/04_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
-| [`05_multimodal`](generative-ai/05_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
+| [`04_generative_text`](model-red-teaming/04_generative_text.ipynb) | Jailbreaks | Compare **TAP, Crescendo, and GOAT** search strategies with prompt transforms |
+| [`05_multimodal`](model-red-teaming/05_multimodal.ipynb) | Multimodal | Hide an instruction in an **image** to bypass text-only guardrails |
 
 ### [`agentic-red-teaming/`](agentic-red-teaming) - attacks on AI agents and multi-agent systems
 
@@ -58,6 +58,14 @@ setup and run issues (Python version, auth, org slug, environments, credits).
 | [`03_exfiltration_channels`](agentic-red-teaming/03_exfiltration_channels.ipynb) | Data exfiltration channels | Sweep a deployed agent for **markdown-image, link-unfurl, unicode, DNS, SSRF, API, and web-search-query** exfil channels; prove leaks with an inert honeytoken (EchoLeak / ForcedLeak / arXiv:2510.09093) |
 | [`04_indirect_injection_web`](agentic-red-teaming/04_indirect_injection_web.ipynb) | Indirect prompt injection | Provision a real **public webpage** with hidden instructions, point your agent at the URL, and prove it acted on hidden content (EchoLeak / ForcedLeak class) |
 | [`05_ci_secret_exfiltration`](agentic-red-teaming/05_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Provision a CI-assistant agent and prove a hidden instruction leaks its deploy secret to an external webhook (GitLost); plus web-search-query + trusted-domain exfil channels and browser-attack scorers |
+| [`07_context_injection`](agentic-red-teaming/07_context_injection.ipynb) | Indirect prompt injection (ASI01) | A hidden instruction in fetched content drives the agent into a data-exfil tool call |
+| [`08_access_control_idor`](agentic-red-teaming/08_access_control_idor.ipynb) | Broken access control (IDOR) | Retrieve another tenant's record by acting as a cross-tenant identity |
+| [`09_memory_poisoning`](agentic-red-teaming/09_memory_poisoning.ipynb) | Memory poisoning (ASI06) | Poison persistent memory so a later benign turn acts on the planted policy |
+| [`10_mcp_poisoning`](agentic-red-teaming/10_mcp_poisoning.ipynb) | MCP tool poisoning | A poisoned tool description makes the agent read a secret file |
+| [`11_agentic_rce`](agentic-red-teaming/11_agentic_rce.ipynb) | Agentic RCE | Reasoning hijack into a privileged code/shell execution |
+| [`12_data_exfiltration`](agentic-red-teaming/12_data_exfiltration.ipynb) | Data exfiltration | A delegate chain leaks a customer record to an external sink |
+| [`13_reasoning_hijack`](agentic-red-teaming/13_reasoning_hijack.ipynb) | Reasoning hijack | A CoT backdoor converts the agent's reasoning into a harmful action |
+| [`14_supply_chain`](agentic-red-teaming/14_supply_chain.ipynb) | Agentic supply chain (ASI04) | The agent resolves and runs a typosquatted look-alike package |
 
 ## Credits
 
