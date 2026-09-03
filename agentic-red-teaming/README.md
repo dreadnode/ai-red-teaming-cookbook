@@ -16,6 +16,7 @@ notebooks run against a local, AWS, or Azure agent without changes.
 | [`02_agentic_security`](02_agentic_security.ipynb) | RCE + data exfiltration | Probe a deployed agent for command execution and exfil across its egress tools, honeytoken-proven |
 | [`04_indirect_injection_web`](04_indirect_injection_web.ipynb) | Indirect prompt injection | Point a deployed agent at a page with hidden instructions and prove whether it acts on fetched content |
 | [`05_ci_secret_exfiltration`](05_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Prove a CI assistant leaks its deploy secret to an external webhook (GitLost) |
+| [`06_multistep_tool_attacks`](06_multistep_tool_attacks.ipynb) | Multi-step tool attacks | Algorithmic search for replay-stable read-then-exfiltrate causal paths (Kaggle x OpenAI x Google x IEEE techniques) |
 | [`07_context_injection`](07_context_injection.ipynb) | Indirect injection (ASI01) | A hidden instruction in fetched content drives a data-exfil tool call |
 | [`09_memory_poisoning`](09_memory_poisoning.ipynb) | Memory poisoning (ASI06) | Poison persistent memory so a later benign turn acts on it |
 | [`10_mcp_poisoning`](10_mcp_poisoning.ipynb) | MCP tool poisoning | A poisoned tool description makes the agent read a secret file |
