@@ -16,6 +16,7 @@ black-box ML models (evasion, extraction, inversion), see
 | [`02_multimodal`](02_multimodal.ipynb) | Multimodal | Hide an instruction in an image to bypass text-only guardrails |
 | [`03_multilingual`](03_multilingual.ipynb) | Multilingual jailbreaks | Re-express a harmful request in low-resource languages / transliteration / code-switching and measure the guardrail gap |
 | [`04_attack_strategies`](04_attack_strategies.ipynb) | Strategy comparison | Run TAP / PAIR / DeepInception / Crescendo and past-tense / persuasion / cipher / ASCII-art against one target and compare scores |
+| [`05_aws_sagemaker`](05_aws_sagemaker.ipynb) | Custom cloud target | Red team a self-hosted model on an AWS SageMaker endpoint (SigV4 `build_target`), running TAP against it |
 
 ## Prerequisites
 
