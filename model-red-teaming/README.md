@@ -19,6 +19,7 @@ black-box ML models (evasion, extraction, inversion), see
 | [`05_aws_sagemaker`](05_aws_sagemaker.ipynb) | Custom cloud target | Red team a self-hosted model on an AWS SageMaker endpoint (SigV4 `build_target`), running TAP against it |
 | [`06_azure_openai`](06_azure_openai.ipynb) | Custom cloud target | Red team an Azure OpenAI / AI Foundry deployment via `azure/<deployment>` (and `build_target` for managed identity), running TAP against it |
 | [`07_custom_http`](07_custom_http.ipynb) | Custom HTTP app | Red team your own AI application behind an HTTP API (Container Apps / Lambda / Cloud Run); includes a runnable sample app in [`custom_http_app/`](custom_http_app/) |
+| [`08_slip`](08_slip.ipynb) | Self-jailbreaking | SLIP uses the target model as its own guide (no attacker LLM): a lexical-insertion BFS that jailbreaks in ~8 calls ([arXiv:2601.02670](https://arxiv.org/abs/2601.02670)) |
 
 ## Prerequisites
 
