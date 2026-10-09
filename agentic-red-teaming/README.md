@@ -20,6 +20,18 @@ deployed-agent notebooks run against a local, AWS, or Azure agent without change
 | [`06_asi_mesh_probes`](06_asi_mesh_probes.ipynb) | OWASP-ASI mesh probes | Five deliberately vulnerable meshes (indirect-injection, memory, MCP, reasoning, supply-chain), one scored attack each |
 | [`07_agentic_probes_2026`](07_agentic_probes_2026.ipynb) | Agentic probes (2026) | Evidence-gated tool-misuse RCE, MCP line-jump, RAG poisoning, and AgentVigil MCTS against a real tool-using agent |
 
+## Which attack should I use?
+
+| If you're testing... | Use | Notebook | Why |
+| --- | --- | --- | --- |
+| A team of agents that delegate to each other (a mesh) | **ATLAS** | `01`, `06` | Routes an injection across the mesh until a privileged *downstream* agent acts - exploits trust *between* agents. |
+| One agent, and you want a multi-step chain (e.g. read-then-exfiltrate) | **multistep_tool_attack** | `05` | Black-box search over message sequences for a replay-stable chain of tool calls in a *single* agent. |
+| Whether a deployed agent will run code or leak data at all | **honeytoken RCE / exfil** | `02` | An inert canary proves a real action fired (code ran, data left) with zero damage. |
+| Hidden instructions in content the agent fetches | **indirect injection** | `03`, `06` | Plants the payload in `tool_output` / fetched pages, not the prompt. |
+| "Throw everything at my agent" across OWASP-ASI | **agentic suite / AgentVigil** | `07` | Runs the mapped family of attacks + an MCTS payload search; evidence-gated. |
+
+Rule of thumb: **mesh -> ATLAS; one agent's tool chain -> multistep; "does it act at all?" -> honeytoken; everything-at-once -> the suite.**
+
 ## How ATLAS works
 
 ATLAS (notebook `01`, and the engine behind the agentic suite) treats a multi-agent
