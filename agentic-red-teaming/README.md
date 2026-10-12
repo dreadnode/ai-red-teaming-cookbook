@@ -5,8 +5,8 @@ what an agent does, not just what it says: tool calls, delegation across agents,
 content the agent reads, and the packages it loads.
 
 Every notebook **provisions a self-contained Dreadnode-hosted target by default**, so
-you need nothing of your own to run them. The single-agent notebooks (`02`, `05`) also
-**accept your own deployed agent** through a single HTTP contract that takes a message
+you need nothing of your own to run them. The deployed-agent notebooks (`02`, `03`, `05`)
+also **accept your own agent** through a single HTTP contract that takes a message
 and returns the executed tool calls (set `AGENT_URL` / `AGENT_KEY`). `07` runs a
 self-contained agent locally using a `dn/` model through the managed proxy (no provider
 key needed). The deployed-agent notebooks run against a local, AWS, or Azure agent
@@ -60,5 +60,5 @@ for the full category mapping.
 
 Run [`../00_prerequisites.ipynb`](../00_prerequisites.ipynb) first to install the
 CLI and sign in. Notebooks use your default `main` workspace and provision their target
-automatically. To point a single-agent notebook (`02`, `05`) at your own agent instead,
-set `AGENT_URL` / `AGENT_KEY`. Do not hard-code secrets in a notebook.
+automatically. To point a deployed-agent notebook (`02`, `03`, `05`) at your own agent
+instead, set `AGENT_URL` / `AGENT_KEY`. Do not hard-code secrets in a notebook.
