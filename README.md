@@ -65,14 +65,12 @@ agentic-red-teaming/     attacks on AI agents & multi-agent systems
 | Notebook | Focus | What it shows |
 |----------|-------|---------------|
 | [`01_multiagent_atlas`](agentic-red-teaming/01_multiagent_atlas.ipynb) | Multi-agent (ATLAS) | Propagate an injection through an agent mesh until a privileged tool fires (confused deputy) |
-| [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | RCE + data exfiltration | Probe a **real deployed agent** for command execution and exfil across its egress tools, honeytoken-proven |
-| [`04_indirect_injection_web`](agentic-red-teaming/04_indirect_injection_web.ipynb) | Indirect prompt injection | Point a deployed agent at a page with hidden instructions and prove whether it acts on fetched content |
-| [`05_ci_secret_exfiltration`](agentic-red-teaming/05_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Prove a CI-assistant agent leaks its deploy secret to an external webhook (GitLost) |
-| [`07_context_injection`](agentic-red-teaming/07_context_injection.ipynb) | Indirect injection (ASI01) | A hidden instruction in fetched content drives a data-exfil tool call |
-| [`09_memory_poisoning`](agentic-red-teaming/09_memory_poisoning.ipynb) | Memory poisoning (ASI06) | Poison persistent memory so a later benign turn acts on the planted policy |
-| [`10_mcp_poisoning`](agentic-red-teaming/10_mcp_poisoning.ipynb) | MCP tool poisoning | A poisoned tool description makes the agent read a secret file |
-| [`13_reasoning_hijack`](agentic-red-teaming/13_reasoning_hijack.ipynb) | Reasoning hijack | A CoT backdoor converts the agent's reasoning into a harmful action |
-| [`14_supply_chain`](agentic-red-teaming/14_supply_chain.ipynb) | Agentic supply chain (ASI04) | The agent resolves and runs a typosquatted look-alike package |
+| [`02_agentic_security`](agentic-red-teaming/02_agentic_security.ipynb) | RCE + data exfiltration | Probe a deployed agent for command execution and exfil across its egress tools, honeytoken-proven |
+| [`03_indirect_injection_web`](agentic-red-teaming/03_indirect_injection_web.ipynb) | Indirect prompt injection | Point a deployed agent at a page with hidden instructions and prove whether it acts on fetched content |
+| [`04_ci_secret_exfiltration`](agentic-red-teaming/04_ci_secret_exfiltration.ipynb) | CI/CD secret exfiltration | Prove a CI assistant leaks its deploy secret to an external webhook (GitLost) |
+| [`05_multistep_tool_attacks`](agentic-red-teaming/05_multistep_tool_attacks.ipynb) | Multi-step tool attacks | Algorithmic search for replay-stable read-then-exfiltrate causal paths |
+| [`06_asi_mesh_probes`](agentic-red-teaming/06_asi_mesh_probes.ipynb) | OWASP-ASI mesh probes | Five deliberately vulnerable meshes (indirect-injection, memory, MCP, reasoning, supply-chain), one scored attack each |
+| [`07_agentic_probes_2026`](agentic-red-teaming/07_agentic_probes_2026.ipynb) | Agentic probes (2026) | Evidence-gated tool-misuse RCE, MCP line-jump, RAG poisoning, and AgentVigil MCTS against a real tool-using agent |
 
 ## Credits
 
