@@ -72,13 +72,6 @@ agentic-red-teaming/     attacks on AI agents & multi-agent systems
 | [`06_asi_mesh_probes`](agentic-red-teaming/06_asi_mesh_probes.ipynb) | OWASP-ASI mesh probes | Five deliberately vulnerable meshes (indirect-injection, memory, MCP, reasoning, supply-chain), one scored attack each |
 | [`07_agentic_probes_2026`](agentic-red-teaming/07_agentic_probes_2026.ipynb) | Agentic probes (2026) | Evidence-gated tool-misuse RCE, MCP line-jump, RAG poisoning, and AgentVigil MCTS against a real tool-using agent |
 
-## Credits
-
-New accounts start with **25,000 credits**. Runs draw from that balance for
-**inference** (managed `dn/` model calls), **compute** (hosted target environments),
-and **span/trace storage** (the findings and trajectories you inspect afterward).
-Watch your balance in the platform UI.
-
 ## Links
 
 - Platform: <https://app.dreadnode.io>
