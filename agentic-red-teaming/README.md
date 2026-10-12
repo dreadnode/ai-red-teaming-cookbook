@@ -4,11 +4,13 @@ Notebooks for red teaming AI agents and multi-agent systems. These attacks targe
 what an agent does, not just what it says: tool calls, delegation across agents,
 content the agent reads, and the packages it loads.
 
-These notebooks either **provision a self-contained target environment** (`01`, `04`,
-and the five-in-one ASI suite `06`) or **point at your own deployed agent** through a
-single HTTP contract that accepts a message and returns the executed tool calls (`02`,
-`03`, `05`). `07` runs a self-contained agent locally with your own provider key. The
-deployed-agent notebooks run against a local, AWS, or Azure agent without changes.
+Every notebook **provisions a self-contained Dreadnode-hosted target by default**, so
+you need nothing of your own to run them. The single-agent notebooks (`02`, `05`) also
+**accept your own deployed agent** through a single HTTP contract that takes a message
+and returns the executed tool calls (set `AGENT_URL` / `AGENT_KEY`). `07` runs a
+self-contained agent locally using a `dn/` model through the managed proxy (no provider
+key needed). The deployed-agent notebooks run against a local, AWS, or Azure agent
+without changes.
 
 | Notebook | Focus | What it shows |
 | --- | --- | --- |
@@ -57,6 +59,6 @@ for the full category mapping.
 ## Prerequisites
 
 Run [`../00_prerequisites.ipynb`](../00_prerequisites.ipynb) first to install the
-CLI and sign in. Notebooks use your default `main` workspace. For the deployed-agent
-notebooks (`02`, `03`, `05`), provide your agent endpoint and key through environment
-variables (`AGENT_URL` / `AGENT_KEY`). Do not hard-code secrets in a notebook.
+CLI and sign in. Notebooks use your default `main` workspace and provision their target
+automatically. To point a single-agent notebook (`02`, `05`) at your own agent instead,
+set `AGENT_URL` / `AGENT_KEY`. Do not hard-code secrets in a notebook.
